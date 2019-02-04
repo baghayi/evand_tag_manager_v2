@@ -1,0 +1,17 @@
+{
+    "name": "Tag Manager V2",
+    "version": "2.0",
+    "description": "Evand Event Tag Manager",
+    "permissions": ["https://api.evand.com/", "tabs", "storage", "https://evand.com/", "declarativeContent"],
+    "page_action": {
+    },
+    "background": {
+        "scripts": [
+            "Kernel.js",
+            "background/PageActionSpecifier.js",
+            "background/AuthedAdminToken.js"
+        ],
+        "persistent": true
+    },
+    "manifest_version": 2
+}
