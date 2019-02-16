@@ -3,7 +3,7 @@ class Kernel
 {
     retrieveJWT(then) {
         chrome.cookies.get({"url": "https://evand.com", "name": "jwt"}, function(cookie) {
-            then(cookie.value);
+            then(decodeURI(cookie.value));
         });
     }
 
