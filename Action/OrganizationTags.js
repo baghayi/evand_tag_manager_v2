@@ -95,8 +95,18 @@ function run(jwt, page, tabId) {
     }
 
     function removeTag(jwt, eventSlug, tagName, checkboxInput) {
-        console.log('remove tag');
-        console.log(tagName);
+        fetch("https://api.evand.com/v2/events/shahdana/tags/" + tagName, {
+            method: "DELETE",
+            headers: {
+                "Authorization": jwt,
+                "Content-Type" : "application/json"
+            }
+        })
+        .then(r => r.status >= 200 && r.status < 300 ? Promise.resolve(r) : Promise.reject(new Error(r.statusText)))
+        .then(function(r) {
+            // @TODO a success message of some sort.
+        })
+        .catch((e) => checkboxInput.checked = true);
     }
 }
 
