@@ -2,8 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+body {
+    direction: rtl;
+    width: 400px;
+    min-height: 20px;
+}
+
+ul {
+    padding: 0;
+}
+
+ul > li {
+    list-style: none;
+}
+
+#tag-box > input[type=text] {
+    width: 95%;
+    height: 25px;
+    padding: 10px;
+}
+    </style>
 </head>
 <body>
-    <p>Here we play with organization tags :D</p>
+    <div id="tag-box">
+        <input type="text" placeholder="اسم تگ و بعدش Enter ...">
+        <ul></ul>
+    </div>
+    <script type="module" src="OrganizationTags.js"></script>
 </body>
 </html>
