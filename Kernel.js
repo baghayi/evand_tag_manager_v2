@@ -31,7 +31,6 @@ class Kernel
     }
 
     run(callWhenReady) {
-        this.callWhenReady = callWhenReady;
         this.retrieveJWT( (jwt) => this.retrieveTabUrl(jwt, (jwt, tabUrl, tabId) => callWhenReady(jwt, tabUrl, tabId)));
     }
     
