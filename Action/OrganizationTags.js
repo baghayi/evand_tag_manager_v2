@@ -62,7 +62,8 @@ function run(jwt, page, tabId) {
             }
         })
         .then((r) => r.json())
-            .then((r) => r.data);
+        .then((r) => r.data)
+        .catch((e) => console.log(e));
     }
 
     function addRemoveTagHandler(e, jwt, tagName) {
