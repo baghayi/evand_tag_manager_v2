@@ -1,9 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-</head>
-<body>
-    <p>Here we play with event tags :D</p>
-</body>
+    <style>
+body {
+    direction: rtl;
+    width: 300px;
+    min-height: 20px;
+}
+
+ul#fucking-tags {
+    direction: rtl;
+    text-align: right;
+    font-family: tahoma, sans-serif;
+    font-size: 1.2em;
+}
+
+span#how-to-remove-tag {
+    font-weight: bold;
+    display: none;
+}
+
+input#new-tag-please {
+    width: 90%;
+    padding: 5px;
+}
+
+ul > li {
+    list-style: none;
+    margin-top: 3px;
+}
+
+ul {
+    padding-right: 5px;
+}
+
+.how-to-delete-a-tag {
+    direction: rtl;
+}
+    </style>
+  </head>
+  <body>
+      <p class="how-to-delete-a-tag">برای حذف تگ، روی علامت ضربدر، دابل کلیک کنید.</p>
+
+
+      <input type="text" placeholder="اسم تگ و بعدش Enter ..." id="new-tag-please">
+
+      <ul id="fucking-tags">
+          <p>در حال بارگزاری تگ‌ها ...</p>
+      </ul>
+
+    <script type="module" src="EventTags.js"></script>
+  </body>
 </html>
+
