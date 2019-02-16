@@ -8,8 +8,7 @@
     "background": {
         "scripts": [
             "Kernel.js",
-            "background/PageActionSpecifier.js",
-            "background/AuthedAdminToken.js"
+            "background/PageActionSpecifier.js"
         ],
         "persistent": true
     },
