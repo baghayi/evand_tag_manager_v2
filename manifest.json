@@ -2,7 +2,7 @@
     "name": "Tag Manager V2",
     "version": "2.0",
     "description": "Evand Event Tag Manager",
-    "permissions": ["https://api.evand.com/", "tabs", "storage", "https://evand.com/", "declarativeContent"],
+    "permissions": ["https://api.evand.com/", "tabs", "storage", "*://evand.com/", "declarativeContent", "cookies"],
     "page_action": {
     },
     "background": {

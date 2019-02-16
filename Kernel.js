@@ -2,12 +2,9 @@
 class Kernel
 {
     retrieveJWT(then) {
-        /*
-         *chrome.storage.sync.get(['status'], function(result){
-         *    then(result.status.jwt);
-         *});
-         */
-        then(null);
+        chrome.cookies.get({"url": "https://evand.com", "name": "jwt"}, function(cookie) {
+            then(cookie.value);
+        });
     }
 
     makePageByTabUrl(tabUrl) {
