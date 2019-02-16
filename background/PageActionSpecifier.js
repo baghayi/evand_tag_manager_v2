@@ -19,22 +19,24 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 });
 
+const kernel = new Kernel;
+function getKernel() {
+    return kernel;
+}
+
 chrome.tabs.onActivated.addListener(function(){
-    const kernel = new Kernel;
 
     chrome.tabs.onUpdated.addListener(function(tabId, changeInfo){ 
         if(changeInfo.status != "complete") return;
 
-        kernel.run(function(jwt, page, tabId){
+        getKernel().run(function(jwt, page, tabId){
             if(page) {
-                console.log(1);
-                chrome.pageAction.setPopup({ tabId: tabId, popup: kernel.getPopup(page) });
+                chrome.pageAction.setPopup({ tabId: tabId, popup: getKernel().getPopup(page) });
             }
         });
     });
 
-    kernel.run(function(jwt, page, tabId){
-        console.log(2);
-        if(page) chrome.pageAction.setPopup({ tabId: tabId, popup: kernel.getPopup(page) });
+    getKernel().run(function(jwt, page, tabId){
+        if(page) chrome.pageAction.setPopup({ tabId: tabId, popup: getKernel().getPopup(page) });
     });
 });
