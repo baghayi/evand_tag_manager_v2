@@ -77,7 +77,7 @@ function run(jwt, page, tabId) {
     }
 
     function addTag(jwt, eventSlug, tagName, checkboxInput) {
-        fetch("https://api.evand.com/v2/events/shahdana/tags", {
+        fetch("https://api.evand.com/v2/events/" + eventSlug + "/tags", {
             method: "POST",
             headers: {
                 "Authorization": jwt,
@@ -95,7 +95,7 @@ function run(jwt, page, tabId) {
     }
 
     function removeTag(jwt, eventSlug, tagName, checkboxInput) {
-        fetch("https://api.evand.com/v2/events/shahdana/tags/" + tagName, {
+        fetch("https://api.evand.com/v2/events/" + eventSlug + "/tags/" + tagName, {
             method: "DELETE",
             headers: {
                 "Authorization": jwt,
